@@ -781,12 +781,12 @@ def main():
 
     client = WtmClient(
         intents=intents,
-        wtm_user=env_vars["WTM_USER"],
-        wtm_password=env_vars["WTM_PASSWORD"],
-        tmdb_token=env_vars["TMDB_TOKEN"],
+        wtm_user=(os.environ["WTM_User"]),
+        wtm_password=(os.environ["WTM_PASSWORD"]),
+        tmdb_token=(os.environ["TMDB_TOKEN"]),
     )
 
-    client.run(env_vars["DISCORD_TOKEN"])
+    client.run((os.environ["token"]))
 
 
 if __name__ == "__main__":
